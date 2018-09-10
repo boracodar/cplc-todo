@@ -6,3 +6,4 @@ App desenvolvido no [Curso de Programação Lucas Caton](https://www.lucascaton.
 
 * [Gem "bootstrap"](https://github.com/twbs/bootstrap-rubygem)
 * [Site oficial do Bootstrap](https://getbootstrap.com/docs)
+* [Documentação oficial do Rails - Validações do Active Record](https://guides.rubyonrails.org/active_record_validations.html)
