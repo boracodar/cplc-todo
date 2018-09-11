@@ -1,20 +1,21 @@
 <%= form_with(model: task, local: true) do |form| %>
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :due_date %>
     <%= form.date_select :due_date %>
   </div>
 
-  <div class="field">
-    <%= form.label :done %>
-    <%= form.check_box :done %>
+  <div class="form-group form-check">
+    <%= form.check_box :done, class: 'form-check-input' %>
+    <%= form.label :done, class: 'form-check-label' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit class: 'btn btn-primary',
+    data: { disable_with: 'Salvando...' } %>
+
+  <%= link_to 'Cancelar', tasks_path, class: 'btn btn-light' %>
 <% end %>

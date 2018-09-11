@@ -1,31 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class='row mb-2'>
+  <div class='col-8'>
+    <h1 class='display-4'>Tarefas</h1>
+  </div>
 
-<h1>Tasks</h1>
+  <div class='col-4 mt-4 text-right'>
+    <%= link_to '+ Tarefa', new_task_path, class: 'btn btn-success' %>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Due date</th>
-      <th>Done</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tasks.each do |task| %>
+<% if @tasks.any? %>
+  <table class='table table-borderless'>
+    <thead>
       <tr>
-        <td><%= task.description %></td>
-        <td><%= task.due_date %></td>
-        <td><%= task.done %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Descrição</th>
+        <th>Prazo</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Task', new_task_path %>
+    <tbody>
+      <% @tasks.each do |task| %>
+        <%= render 'table_row', task: task %>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Nenhuma tarefa foi cadastrada ainda.</p>
+<% end %>
