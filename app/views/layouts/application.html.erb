@@ -10,15 +10,19 @@
   </head>
 
   <body>
-    <% flash.each do |type, message| %>
-      <div class='alert alert-<%= type == 'alert' ? 'danger' : 'success' %> alert-dismissible fade show' role='alert'>
-        <%= message %>
-        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-          <span aria-hidden='true'>&times;</span>
-        </button>
-      </div>
-    <% end %>
+    <div class='d-flex h-100 align-items-center justify-content-center row bg'>
+      <main class='col-11 col-md-10 col-lg-8 shadow-lg p-5 mb-5 bg-white rounded'>
+        <% flash.each do |type, message| %>
+          <div class='alert alert-<%= type == 'alert' ? 'danger' : 'success' %> alert-dismissible fade show' role='alert'>
+            <%= message %>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+            </button>
+          </div>
+        <% end %>
 
-    <%= yield %>
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
