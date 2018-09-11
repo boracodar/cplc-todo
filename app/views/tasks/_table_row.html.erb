@@ -1,5 +1,5 @@
-<tr class='border-top'>
-  <td>
+<tr class='<%= task.parent? ? 'border-top' : '' %>'>
+  <td class='<%= task.sub_task? ? 'pl-5' : '' %>'>
     <span class='text-<%= task.css_color %> pr-2'><%= task.symbol %></span>
 
     <% if task.done? %>
@@ -12,6 +12,10 @@
   <td><%= l task.due_date %></td>
 
   <td class='text-right pr-0'>
+    <% if task.parent? %>
+      <%= link_to '+ Sub-tarefa', new_task_path(parent_id: task.id), class: 'btn btn-success btn-sm' %>
+    <% end %>
+
     <%= link_to 'Editar', edit_task_path(task), class: 'btn btn-secondary btn-sm' %>
 
     <%= link_to 'Apagar', task, method: :delete, class: 'btn btn-danger btn-sm',

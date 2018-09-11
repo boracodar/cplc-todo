@@ -1,4 +1,7 @@
 <%= form_with(model: task, local: true) do |form| %>
+  <%= form.hidden_field :parent_id,
+    value: task.parent_id || params[:parent_id] %>
+
   <div class="form-group">
     <%= form.label :description %>
     <%= form.text_field :description, class: 'form-control' %>
