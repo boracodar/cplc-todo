@@ -1,10 +1,9 @@
 # CPLC - ToDo
 
-Applicação desenvolvida no [Curso de Programação Lucas Caton](https://www.lucascaton.com.br/cursos/cplc/).
+Applicação desenvolvida no [Curso de Programação Ruby on Rails 6](https://www.lucascaton.com.br/cursos/cplc/).
 
 ### Documentações utilizadas nas vídeo-aulas
 
-* [Bootstrap](https://getbootstrap.com/docs)
 * [Rubocop](https://github.com/rubocop-hq/rubocop) - Analisador/formatador de estilo de código
 
 * Documentação oficial do **Rails**:
