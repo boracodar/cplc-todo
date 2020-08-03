@@ -1,11 +1,11 @@
-@import 'bootstrap';
+@import "bootstrap";
 
 html, body {
   height: 100%;
 }
 
 .bg {
-  background-image: image-url('bg.jpg');
+  background-image: url('../../assets/images/bg.jpg');
   background-position: center;
   background-size: cover;
 }
